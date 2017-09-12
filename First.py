@@ -1,4 +1,3 @@
-
 # First Steps Towards Programming
 # print u'Hello world'
 
@@ -8,5 +7,5 @@
 #     a, b = b, a + b
 #     print 'a='+str(a)+'\n'
 #
-# i = 256*256
+i = 256*256
 print('the value of i is ',i)
