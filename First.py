@@ -1,3 +1,4 @@
+#_*_ coding utf-8 _*_
 # First Steps Towards Programming
 # print u'Hello world'
 #
@@ -76,18 +77,68 @@ fib(200)
 print fib
 
 # Default Argument Values
-def ask_ok(prompt,retries=4,complaint = 'Yes or no,please'):
+# def ask_ok(prompt,retries=4,complaint = 'Yes or no,please'):
+#     while True:
+#         ok = raw_input(prompt)
+#         if ok in ['y','ye','yes']:
+#             return True
+#         if ok in ('n','no','nop','nope'):
+#             return False
+#         retries = retries - 1
+#         if retries < 0:
+#             raise  IOError('refusenik user')
+#         print  complaint
+#
+# ask_ok('yes',9,"hah")
+
+def ask_ok(prompt, retries=4, complaint='Yes or no, please!'):
     while True:
         ok = raw_input(prompt)
-        if ok in ['y','ye','yes']:
+        if ok in ('y', 'ye', 'yes'):
             return True
-        if ok in ('n','no','nop','nope'):
+        if ok in ('n', 'no', 'nop', 'nope'):
             return False
         retries = retries - 1
         if retries < 0:
-            raise  IOError('refusenik user')
-        print  complaint
+            raise IOError('refusenik user')
+        print complaint
 
-ask_ok('yes',9,"hah")
+ask_ok('Do you really want to quit?')
+i = 5
+def f(arg = i):
+    print  arg
 
+i = 6
+f()
 # 4.7.2. Keyword Arguments
+
+def parrot(voltage, state = 'a stiff',action ='voom',type = 'Norwegian blue'):
+    print  '__ This parrot woul\'t',action
+    print  'if you put ',voltage,'volts through it.'
+    print '__ lovely plumage ,the ',type
+    print '__ It\'t',state,'!'
+
+parrot(voltage='xx')
+parrot(1000)                                          # 1 positional argument
+parrot(voltage=1000)                                  # 1 keyword argument
+parrot(voltage=1000000, action='VOOOOOM')             # 2 keyword arguments
+parrot(action='VOOOOOM', voltage=1000000)             # 2 keyword arguments
+parrot('a million', 'bereft of life', 'jump')         # 3 positional arguments
+parrot('a thousand', state='pushing up the daisies')  # 1 positional, 1 keyword
+
+def cheeseshop(kind, *arguments, **keywords):
+    print "-- Do you have any", kind, "?"
+    print "-- I'm sorry, we're all out of", kind
+    for arg in arguments:
+        print arg
+    print "-" * 40
+    keys = sorted(keywords.keys())
+    for kw in keys:
+        print kw, ":", keywords[kw]
+
+
+cheeseshop("Limburger", "It's very runny, sir.",
+           "It's really very, VERY runny, sir.",
+           shopkeeper='Michael Palin',
+           client="John Cleese",
+           sketch="Cheese Shop Sketch")
