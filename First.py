@@ -63,7 +63,7 @@ for n in  range(2,10):
 #     pass
 def initlog(*args):
     pass
-initlog()
+# initlog()
 
 # Defining Functions
 def fib(n):
