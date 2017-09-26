@@ -112,13 +112,35 @@ print  lib.__defaults__
 #4.7.5 . Lambda
 
 def make_incrementtor(n):
+    """Do thing , but document it
+        jiushiwo
+    """
     return  lambda x:x+n
 
 f= make_incrementtor(20)
 print f(2)
 print f(8)
 
-pairs = [(1,'one'),(2,'two'),(3,'three'),(4,'four')]
+pairs = [(1,'one'),(2,'two'),(4,'four'),(3,'three')]
 pairs.sort(key=lambda pair:pair[1],reverse=True)
 
 print pairs
+
+lsb = [(1,'one'),(2,'two'),(3,'three'),(4,'four'),]
+lsb.sort(key=lambda pair:pair[1],reverse=True)
+
+print lsb
+
+print lambda a,b:a+b
+
+print make_incrementtor.__doc__
+
+#An Informal Introduction to Python
+
+print 'spam eggs'  # single quotes
+print 'doesn\'t'
+print  """\
+        Uage: thingy [Option]
+            -h
+            -H hostname
+        """
